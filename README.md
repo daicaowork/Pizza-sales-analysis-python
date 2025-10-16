@@ -21,20 +21,12 @@ df.head()
 
 
 
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -166,9 +158,7 @@ df.columns
 ```
 
 
-
-
-    Index(['order_details_id', 'order_id', 'pizza_id', 'quantity', 'order_date',
+  Index(['order_details_id', 'order_id', 'pizza_id', 'quantity', 'order_date',
            'weekdays', 'months', 'order_time', 'unit_price', 'total_price',
            'pizza_size', 'pizza_category', 'pizza_ingredients', 'pizza_name'],
           dtype='object')
@@ -180,7 +170,7 @@ df.columns
 df.info()
 ```
 
-    <class 'pandas.core.frame.DataFrame'>
+  <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 48620 entries, 0 to 48619
     Data columns (total 14 columns):
      #   Column             Non-Null Count  Dtype         
@@ -201,7 +191,6 @@ df.info()
      13  pizza_name         48620 non-null  object        
     dtypes: datetime64[ns](1), float64(2), int64(3), object(8)
     memory usage: 5.2+ MB
-    
 
 
 ```python
