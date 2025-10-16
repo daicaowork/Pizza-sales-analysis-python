@@ -11,19 +11,22 @@ import plotly.express as px
 ```
 
 # Load the dataset
+```python
 df = pd.read_excel("C:/Users/Admin/Documents/SQL PROJECT/Pizza/Pizza Sales Dataset.xlsx", sheet_name="pizza_sales")
-
+```
 # Explore data
+```python
 df.head()
 df.shape
 df.columns
 df.info()
 df.dtypes
 df.describe()
-
+```
 # -----------------------------
 # 1. Business Overview
 # -----------------------------
+```python
 total_revenue = df['total_price'].sum()
 total_pizzas_sold = df['quantity'].sum()
 total_orders = df['order_id'].nunique()
@@ -36,7 +39,7 @@ print(f"Total Pizzas Sold: {total_pizzas_sold}")
 print(f"Total Orders: {total_orders}")
 print(f"Average Order Value: ${avg_order_value:.2f}")
 print(f"Average Pizzas per Order: {avg_pizzas_per_order:.2f}")
-
+```
 # -----------------------------
 # 2. Most Common Ingredients
 # -----------------------------
