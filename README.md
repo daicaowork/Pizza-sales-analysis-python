@@ -342,13 +342,13 @@ print(f"Average Pizza per Order: {avg_pizzas_per_order:.2f}")
 
 ```python
 ingredient = (
-    df['pizza_ingredients']          # Lấy cột chứa nguyên liệu
-    .str.split(',')                  # Tách chuỗi bằng dấu phẩy thành list
-    .explode()                       # Bung mỗi phần tử trong list thành 1 dòng
-    .str.strip()                     # Xóa khoảng trắng thừa 2 bên
-    .value_counts()                  # Đếm số lần xuất hiện của từng nguyên liệu
-    .reset_index()                   # Đưa kết quả thành DataFrame thay vì Series
-    .rename(columns={'index':'counts', 'pizza_ingredients':'Ingredients'})  # Đổi tên cột
+    df['pizza_ingredients']          
+    .str.split(',')                  
+    .explode()                     
+    .str.strip()                    
+    .value_counts()                  
+    .reset_index()                   
+    .rename(columns={'index':'counts', 'pizza_ingredients':'Ingredients'})  
 )
 
 print(ingredient.head(10))
