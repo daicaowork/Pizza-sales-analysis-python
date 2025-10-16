@@ -314,62 +314,6 @@ df.describe()
 </div>
 
 
-
-
-```python
-total_revenue = df['total_price'].sum()
-total_pizzas_sold = df['quantity'].sum()
-total_orders = df['order_id'].nunique()
-
-avg_order_value = total_revenue / total_orders
-avg_pizzas_per_order = total_pizzas_sold / total_orders
-
-print(f"Total Revenue: ${total_revenue:.2f}")
-print(f"Total Pizzas Sold: {total_pizzas_sold}")
-print(f"Total Orders: {total_orders}")
-print(f"Avg Order Value: ${avg_order_value:.2f}")
-print(f"Average Pizza per Order: {avg_pizzas_per_order:.2f}")
-
-```
-
-    Total Revenue: $817860.05
-    Total Pizzas Sold: 49574
-    Total Orders: 21350
-    Avg Order Value: $38.31
-    Average Pizza per Order: 2.32
-    
-
-
-```python
-ingredient = (
-    df['pizza_ingredients']          
-    .str.split(',')                  
-    .explode()                     
-    .str.strip()                    
-    .value_counts()                  
-    .reset_index()                   
-    .rename(columns={'index':'counts', 'pizza_ingredients':'Ingredients'})  
-)
-
-print(ingredient.head(10))
-
-
-```
-
-             Ingredients  count
-    0             Garlic  27422
-    1           Tomatoes  26601
-    2         Red Onions  19547
-    3        Red Peppers  16284
-    4  Mozzarella Cheese  10333
-    5          Pepperoni  10300
-    6            Spinach  10012
-    7          Mushrooms   9624
-    8            Chicken   8443
-    9          Capocollo   6572
-
-    
-
 # 1. Business Overview
 
 ```python
@@ -386,7 +330,11 @@ print(f"Total Orders: {total_orders}")
 print(f"Average Order Value: ${avg_order_value:.2f}")
 print(f"Average Pizzas per Order: {avg_pizzas_per_order:.2f}")
 ```
-
+    Total Revenue: $817860.05
+    Total Pizzas Sold: 49574
+    Total Orders: 21350
+    Avg Order Value: $38.31
+    Average Pizza per Order: 2.32
 # 2. Most Common Ingredients
 ```python
 ingredient = (
@@ -400,7 +348,19 @@ ingredient = (
 )
 print(ingredient.head(10))
 ```
+             Ingredients  count
+    0             Garlic  27422
+    1           Tomatoes  26601
+    2         Red Onions  19547
+    3        Red Peppers  16284
+    4  Mozzarella Cheese  10333
+    5          Pepperoni  10300
+    6            Spinach  10012
+    7          Mushrooms   9624
+    8            Chicken   8443
+    9          Capocollo   6572
 
+    
 # 3. Orders by Day of the Week
 ```python
 df['order_date'] = pd.to_datetime(df['order_date'], dayfirst=True)
