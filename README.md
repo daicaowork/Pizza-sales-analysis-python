@@ -71,9 +71,9 @@ plt.ylabel("Number of Orders")
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
-<img width="1044" height="648" alt="image" src="https://github.com/user-attachments/assets/9fdbafad-d549-49b7-8f71-f5cd41cc3014" />
 
 ```
+<img width="1044" height="648" alt="image" src="https://github.com/user-attachments/assets/89687af0-3dd7-4678-af2f-57e9a1574301" />
 
 # 4. Revenue by Day of the Week
 ```python
